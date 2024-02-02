@@ -1,0 +1,144 @@
+body {
+  background-color: white;
+}
+
+header{
+  color: black;
+  width:100%;
+  background-color: #065892;
+  display: flex;
+  text-align: center;
+
+}
+
+nav{
+  width: 70%;
+  margin-top: 2%;
+  
+ 
+}
+
+a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2%;
+  text-decoration: none;
+  float: left;
+  
+  
+  
+}
+
+a:hover{
+  background-color: black;
+}
+
+.vijesti {
+ margin-left: 20px;
+ width:10%;
+ max-width: 100%;
+ 
+ 
+}
+
+h2{
+    border-bottom: 2px solid #8b8b8b;
+    color: #8b8b8b;
+    margin:3%;
+    
+}
+
+img {
+  max-width: 100%;
+  
+}
+
+article {
+  background-color: white;
+  width: 30%;
+  margin: 2%;
+}
+
+div {
+display: flex;
+}
+
+p{
+  margin:10px;
+  font-size:2vw;
+  color: #4b4b4b;
+}
+
+section{
+  background-color: #f6f6f6;
+  width: 50%;
+  margin-left: 3%;
+}
+
+footer{
+  background-color: #3c3c3c;
+  text-align: center;
+}
+
+h1{
+  color: #dcdcdc;
+  font-size: large;
+}
+
+.stranica{
+
+  width: 100%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.zaseban{
+  
+  width: 50%;
+  background-color: #f6f6f6;
+  margin-left: 10%;
+  border-bottom: 4px solid #8b8b8b;
+  padding-bottom: 10px;
+  
+}
+
+h3{
+  font-size: 300%;
+  text-align: center;
+  background-color: #ffffff;
+  margin:10px;
+  
+  
+}
+
+.zasebanp{
+  
+    margin:10px;
+    font-size:2vw;
+    color: black;
+    background-color: #ffffff;
+    margin-bottom: 10%;
+
+    
+  }
+
+.posebanbody{
+  background-color: #065892;
+}
+
+.newpage:hover{
+  background-color: white;
+ 
+}
+.pic{
+
+  
+  max-width: 98%;
+  margin:1%;
+}
+
+
+
+
+

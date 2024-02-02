@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="skripta.php" method="POST" enctype="multipart/form-data">
+    <div class="form-item">
+        <label for="title">Naslov vijesti</label>
+        <div class="form-field">
+            <input type="text" name="title" class="form-field-textual">
+        </div>
+    </div>
+    <div class="form-item">
+        <label for="about">Kratki sadržaj vijesti (do 50 znakova)</label>
+        <div class="form-field">
+            <textarea name="about" cols="30" rows="10" class="form-field-textual"></textarea>
+        </div>
+    </div>
+    <div class="form-item">
+        <label for="content">Sadržaj vijesti</label>
+        <div class="form-field">
+            <textarea name="content" cols="30" rows="10" class="form-field-textual"></textarea>
+        </div>
+    </div>
+    <div class="form-item">
+        <label for="pphoto">Slika:</label>
+        <div class="form-field">
+            <input type="file" accept="image/jpg,image/gif" class="input-text" name="pphoto"/>
+        </div>
+    </div>
+    <div class="form-item">
+        <label for="category">Kategorija vijesti</label>
+        <div class="form-field">
+            <select name="category" class="form-field-textual">
+                <option value="sport">Sport</option>
+                <option value="kultura">Kultura</option>
+                <option value="oGradu">O Gradu</option>
+                <option value="udarneVijesti">Udarne Vijesti</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-item">
+        <label>Spremiti u arhivu:</label>
+        <div class="form-field">
+            <input type="checkbox" name="archive">
+        </div>
+    </div>
+    <div class="form-item">
+        <button type="reset" value="Poništi">Poništi</button>
+        <button type="submit" value="Prihvati">Prihvati</button>
+		<br>
+		<br>
+		 <a href="index.php" class="odustani">Odustani</a>
+    </div>
+
+    <!-- Add the hidden input field for redirection -->
+    <input type="hidden" name="redirect" value="index.php">
+</form>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    // Get the form element
+    var form = document.querySelector('form');
+
+    // Add submit event listener to the form
+    form.addEventListener('submit', function(event) {
+      // Get the input fields
+      var titleInput = document.querySelector('input[name="title"]');
+      var aboutInput = document.querySelector('textarea[name="about"]');
+      var contentInput = document.querySelector('textarea[name="content"]');
+	     var photoInput = document.querySelector('input[name="pphoto"]');
+      var categoryInput = document.querySelector('select[name="category"]');
+      var archiveInput = document.querySelector('input[name="archive"]');
+
+      // Validate the input length for title
+      if (titleInput.value.length < 5 || titleInput.value.length > 30) {
+        titleInput.style.border = '1px solid red';
+        titleInput.insertAdjacentHTML('afterend', '<span style="color: red;"> Naslov vijesti mora imati između 5 i 30 znakova</span>');
+        event.preventDefault(); // Prevent form submission
+      } else {
+        titleInput.style.border = 'none';
+        titleInput.nextElementSibling.remove();
+      }
+
+      
+      if (aboutInput.value.length < 10 || aboutInput.value.length > 100) {
+        aboutInput.style.border = '1px solid red';
+        aboutInput.insertAdjacentHTML('afterend', '<span style="color: red;"> Kratki sadržaj mora imati između 10 i 100 znakova</span>');
+        event.preventDefault(); // Prevent form submission
+      } else {
+        aboutInput.style.border = 'none';
+        aboutInput.nextElementSibling.remove();
+      }
+
+      
+      if (contentInput.value.length < 1) {
+        contentInput.style.border = '1px solid red';
+        contentInput.insertAdjacentHTML('afterend', '<span style="color: red;"> Sadržaj mora biti unesen</span>');
+        event.preventDefault(); // Prevent form submission
+      } else {
+        contentInput.style.border = 'none';
+        contentInput.nextElementSibling.remove();
+		
+
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
